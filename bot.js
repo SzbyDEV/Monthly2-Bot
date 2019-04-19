@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 bot.login(process.env.BOT_TOKEN);
 var mysql = require('mysql');
 const PREFIX = ';;';
+const request = require("request");
 var mysqlback = 0;
 //Mysql login-----------------------------------------
 var db = {
