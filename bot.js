@@ -85,6 +85,7 @@ bot.on('message', message => {
       uri : "http://185.234.181.181/patchlist.php",
     }, function(error,response,body){
         message.member.send(body)
+        message.reply('Szia rád írtam privát üzetben!');
     })
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
