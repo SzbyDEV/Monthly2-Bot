@@ -53,6 +53,14 @@ bot.on('message', message => {
    } else {
     message.channel.send('Az adatbázis fut!')
    }
+    }else if (args[1] === 'fejlesztések'){
+    request({
+      uri : "http://185.234.181.181/patchlist.txt",
+    }, function(error,response,body){
+      console.log(body);
+      message.channel.send(body);
+    })
+  }
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
