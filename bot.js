@@ -101,7 +101,7 @@ bot.on('message', message => {
     messagesSent : 0
   }
 userData[sender.id].messagesSent++;
-fs.writeFileSync('storage/userdata.json', JSON.stringify(userData), (err) => {
+fs.writeFileSync('Monthly2-Bot/storage/userdata.json', JSON.stringify(userData), (err) => {
   if(err) console.error(err);
 });
 })
