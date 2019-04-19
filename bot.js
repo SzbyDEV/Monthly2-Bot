@@ -6,7 +6,7 @@ const PREFIX = ';;';
 const request = require("request");
 var mysqlback;
 var fs = require('fs');
-var userData = JSON.parse(fs.readFileSync('Storage/userdata.json','utf8'));
+var userData = JSON.parse(fs.readFileSync('Monthly2-Bot/storage/userdata.json','utf8'));
 //Bot Start-------------------------------------------
 bot.on('ready', () => {
     bot.user.setStatus('Online');
@@ -100,7 +100,7 @@ bot.on('message', message => {
     messagesSent : 0
   }
 userData[sender.id].messagesSent++;
-fs.writeFile('Storage/userdata.json', JSON.stringify(userData), (err) => {
+fs.writeFile('Monthly2-Bot/storage/userdata.json', JSON.stringify(userData), (err) => {
   if(err) console.error(err);
 });
 })
