@@ -60,7 +60,6 @@ bot.on('message', message => {
       console.log(body);
       message.channel.send(body);
     })
-  }
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
