@@ -5,6 +5,11 @@ var mysql = require('mysql');
 const PREFIX = ';;';
 const request = require("request");
 var mysqlback;
+//Bot Start-------------------------------------------
+bot.on('ready', () => {
+    bot.user.setStatus('dnd');
+    bot.user.setGame('Monthly2')
+})
 //Mysql login-----------------------------------------
 var db = {
  host: "45.67.156.82",
@@ -67,6 +72,5 @@ bot.on('message', message => {
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
-
  }
 })
