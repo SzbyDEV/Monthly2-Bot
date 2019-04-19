@@ -97,6 +97,9 @@ bot.on('message', message => {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
  }
+ if (args[0] === 'help'){
+     message.reply('Jelenlegi prefixumok a ;;info és a ;;játékok illetve a ;;pong')
+ }
  if(!userData[sender.id]) userData[sender.id] ={
     messagesSent : 0
   }
