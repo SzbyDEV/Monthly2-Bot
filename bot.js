@@ -45,7 +45,7 @@ bot.on('message', message => {
   if (args[1] === 'weboldal') {
    message.reply('http://185.234.181.181/index.php');
   } else if (args[1] === 'help') {
-   message.reply('Jelenlegi prefixumok : weboldal,status')
+   message.reply('Jelenlegi prefixumok : weboldal,status,fejlesztések')
   } else if (args[1] === 'status') {
    DisconnectReconnect();
    if (mysqlback === 0) {
@@ -56,7 +56,7 @@ bot.on('message', message => {
    }
     }else if (args[1] === 'fejlesztések'){
     request({
-      uri : "http://185.234.181.181/patchlist.txt",
+      uri : "http://185.234.181.181/patchlist.php",
     }, function(error,response,body){
       console.log(body);
       message.channel.send(body);
