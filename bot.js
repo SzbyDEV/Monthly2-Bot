@@ -1,29 +1,15 @@
 const Discord  = require('discord.js')
 const bot = new Discord.Client();
-const token = 'NTY4NTMwMDE5MzY2NzMxNzg4.XLjdbA.rgNK4BUytYEeXaT_JBTTVeNY-hc';
 bot.login(process.env.BOT_TOKEN);
 const PREFIX = ';;';
-const DEVID = '308634171948138506';
 bot.on('ready', () => {
     console.log('Fent vagyok geci');
 })
 //Functions----------------------------------
-function stopBot(channel) {
-    channel.send('Le lettem állítva')
-    .then(msg => bot.destroy())
-}
-function resetBot(channel) {
-    channel.send('Újra lettem indítva')
-    .then(msg => bot.destroy())
-    .then(() => bot.login(token));
-}
 //-------------------------------------------
-bot.on('message', message => {
-        if(message.content === ';;reset'){
-            resetBot(message.channel);
-        }
+bot.on('message', message => { 
     if(message.content === ";;Szia"){
-        message.reply('Szevasz te vauvau');
+        message.reply('Szevasz!');
     }
     
 });
