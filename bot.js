@@ -5,6 +5,8 @@ var mysql = require('mysql');
 const PREFIX = ';;';
 const request = require("request");
 var mysqlback;
+var fs = require('fs');
+var userData = JSON.parse(fs.readFileSync('Storage/userdata.json','utf8'));
 //Bot Start-------------------------------------------
 bot.on('ready', () => {
     bot.user.setStatus('Online');
