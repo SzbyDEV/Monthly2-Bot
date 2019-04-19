@@ -45,6 +45,7 @@ function DisconnectReconnect() {
 }
 //Messages-------------------------------------------
 bot.on('message', message => {
+ var sender = message.author;
  let args = message.content.substring(PREFIX.length).split(" ");
  if(args[0] === 'játékok'){
     if(args[1] === 'érme'){
@@ -58,8 +59,10 @@ bot.on('message', message => {
         else{message.reply('Sajnálom nem nyertél')}
     }else if(args[1] === 'avatar'){
             message.reply('Tessék itt az avatárod linkje: ' + message.author.avatarURL);
+    }else if (args[1] === 'üzenetek'){
+    message.reply('Elküldtél eddig '+userData[sender.id].messagesSent+' db üzenetet!')
     }else if(args[1] === 'help'){
-        message.reply('Jelenlegi prefixumok : érme,avatar')
+        message.reply('Jelenlegi prefixumok : érme,avatar,üzenetek')
     }else{
         message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;játékok help parancsot');
      }
@@ -91,5 +94,12 @@ bot.on('message', message => {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
  }
+ if(!userData[sender.id]) userData[sender.id] ={
+    messagesSent : 0
+  }
+userData[sender.id].messagesSent++;
+fs.writeFile('Storage/userdata.json', JSON.stringify(userData), (err) => {
+  if(err) console.error(err);
+});
 })
 //JOIN-----------------------------------------
