@@ -9,7 +9,7 @@ bot.on('ready', () => {
 //-------------------------------------------
 bot.on('message', message => { 
     if(message.content === ";;Szia"){
-        message.reply('Szevasz!');
+        message.reply('Szia neked is!');
     }
     
 });
