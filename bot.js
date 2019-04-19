@@ -1,10 +1,23 @@
 const Discord  = require('discord.js')
 const bot = new Discord.Client();
 bot.login(process.env.BOT_TOKEN);
+var mysql = require('mysql');
 const PREFIX = ';;';
-bot.on('ready', () => {
-    console.log('Sikeres login');
-})
+const mysqlback = -1;
+//Mysql test-----------------------------------------
+var con = mysql.createConnection({
+  host: "45.67.156.82",
+  user: "root",
+  password: "zaitsev"
+});
+
+con.connect(function(err) {
+  if (err) {
+      mysqlback = 0;
+  }
+  else
+  mysqlback = 1;
+});
 //Functions----------------------------------
 //-------------------------------------------
 bot.on('message', message => { 
@@ -28,9 +41,11 @@ bot.on('message',message => {
         }else if(args[1] === 'help'){
             message.reply('Jelenlegi prefixumok : weboldal,status')
         }else if (args[1] === 'status'){
-            message.channel.send('Jelenleg Státusz: ')
-            message.channel.send('Login státusz: Online')
-            message.channel.send('Szerver státusz: Online')
+            if (mysqlback === 1){
+                message.channel.send('Az adatbázis fut!')
+            }else{
+                message.channel.send('Az adatbázis nem fut!')
+            }
         }
         else{
             message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
