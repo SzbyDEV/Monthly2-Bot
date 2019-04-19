@@ -20,10 +20,10 @@ var connection;
 //Functions----------------------------------
 function RandomNum(max) {
     return Math.floor(Math.random() * Math.floor(max));
-  }
+}
+
 function DisconnectReconnect() {
  connection = mysql.createConnection(db);
-
 
  connection.connect(function(err) {
   if (err) {
@@ -48,11 +48,12 @@ bot.on('message', message => {
  let args = message.content.substring(PREFIX.length).split(" ");
  if(args[0] === 'játékok'){
     if(args[1] === 'érme'){
+        message.reply('Példa játék ;;játékok érme fej ')
         randomnumber = RandomNum(2);
         if(args[2] === 'fej' & randomnumber === 0){
-          message.reply('Nyertél gratulálok!(fej)')
+          message.reply('Nyertél gratulálok!')
         }else if(args[2] === 'írás' & randomnumber === 1){
-          message.reply('Nyertél gratulálok!(írás)')
+          message.reply('Nyertél gratulálok!')
         }
         else{message.reply('Sajnálom nem nyertél')}
     }else if(args[1] === 'avatar'){
@@ -64,7 +65,7 @@ bot.on('message', message => {
      }
  }
  if (args[0] === 'ping') {
-  message.channel.send('Pong! :smile: :ping_pong:');
+    message.channel.send('Pong! :smile: :ping_pong:');
  }
  if (args[0] === 'info') {
   if (args[1] === 'weboldal') {
