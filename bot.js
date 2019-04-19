@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 bot.login(process.env.BOT_TOKEN);
 const PREFIX = ';;';
 bot.on('ready', () => {
-    console.log('Fent vagyok geci');
+    console.log('Sikeres login');
 })
 //Functions----------------------------------
 //-------------------------------------------
