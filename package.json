@@ -1,0 +1,13 @@
+{
+  "name": "Monthly2",
+  "version": "0.0.1",
+  "description": "Monthlybot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  }
+  "dependencies" : {
+  "discord.js": "11.4.2",
+  "request": "2.81.0"
+  }
+}
