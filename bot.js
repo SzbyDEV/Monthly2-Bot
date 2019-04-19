@@ -63,7 +63,7 @@ bot.on('message', message => {
       message.channel.send(body);
     })
   }else if(args[1] === 'avatar'){
-    message.reply('Tessék itt az avatárod linkje: '.message.author.avatarURL);
+    message.reply('Tessék itt az avatárod linkje: ' + message.author.avatarURL);
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
