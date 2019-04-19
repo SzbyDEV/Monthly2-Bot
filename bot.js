@@ -59,9 +59,9 @@ bot.on('message', message => {
             message.reply('Tessék itt az avatárod linkje: ' + message.author.avatarURL);
     }else if(args[1] === 'help'){
         message.reply('Jelenlegi prefixumok : érme,avatar')
-    }
- }else{
-    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;játékok help parancsot');
+    }else{
+        message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;játékok help parancsot');
+     }
  }
  if (args[0] === 'ping') {
   message.channel.send('Pong! :smile: :ping_pong:');
