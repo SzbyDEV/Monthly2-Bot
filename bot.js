@@ -13,6 +13,7 @@ var db = {
 };
 var connection;
 //Functions----------------------------------
+
 function DisconnectReconnect() {
  connection = mysql.createConnection(db);
 
@@ -45,7 +46,7 @@ bot.on('message', message => {
   if (args[1] === 'weboldal') {
    message.reply('http://185.234.181.181/index.php');
   } else if (args[1] === 'help') {
-   message.reply('Jelenlegi prefixumok : weboldal,status,fejlesztések')
+   message.reply('Jelenlegi prefixumok : weboldal,status,fejlesztések,avatar')
   } else if (args[1] === 'status') {
    DisconnectReconnect();
    if (mysqlback === 0) {
@@ -61,6 +62,8 @@ bot.on('message', message => {
       console.log(body);
       message.channel.send(body);
     })
+  }else if(args[1] === 'avatar'){
+    message.reply('Tessék itt az avatárod linkje: '.message.author.avatarURL);
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
   }
