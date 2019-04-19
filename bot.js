@@ -63,20 +63,8 @@ bot.on('message', message => {
             message.reply('Tessék itt az avatárod linkje: ' + message.author.avatarURL);
     }else if (args[1] === 'üzenetek'){
     message.reply('Elküldtél eddig '+userData[sender.id].messagesSent+' db üzenetet!')
-    if (userData[sender.id].messagesSent <= 20){
-        message.reply('A jelenlegi szinted : 1')
-      }else if (userData[sender.id].messagesSent >= 21){
-        message.reply('A jelenlegi szinted : 2')
-      }else if (userData[sender.id].messagesSent >= 41){
-        message.reply('A jelenlegi szinted : 3')
-      }else if (userData[sender.id].messagesSent >= 61){
-        message.reply('A jelenlegi szinted : 4')
-      }else if (userData[sender.id].messagesSent >= 81){
-        message.reply('A jelenlegi szinted : 5')
-      }else if (userData[sender.id].messagesSent >= 101){
-        message.reply('A jelenlegi szinted : 6')
-      }
-    }else if(args[1] === 'help'){
+    }
+    else if(args[1] === 'help'){
         message.reply('Jelenlegi prefixumok : érme,avatar,üzenetek')
     }else{
         message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;játékok help parancsot');
