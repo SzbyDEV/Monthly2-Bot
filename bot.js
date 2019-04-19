@@ -4,7 +4,7 @@ bot.login(process.env.BOT_TOKEN);
 var mysql = require('mysql');
 const PREFIX = ';;';
 const request = require("request");
-var mysqlback = 0;
+var mysqlback;
 //Mysql login-----------------------------------------
 var db = {
  host: "45.67.156.82",
