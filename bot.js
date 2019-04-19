@@ -84,8 +84,7 @@ bot.on('message', message => {
     request({
       uri : "http://185.234.181.181/patchlist.php",
     }, function(error,response,body){
-      console.log(body);
-      message.channel.send(body);
+        message.member.send(body)
     })
   } else {
    message.reply('Nincsen ilyen prefixum ha nem találsz valamit használd az ;;info help parancsot');
