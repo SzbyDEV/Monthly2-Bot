@@ -9,7 +9,7 @@ var fs = require('fs');
 var userData = JSON.parse(fs.readFileSync('storage/userdata.json','utf8'));
 //Bot Start-------------------------------------------
 bot.on('ready', () => {
-    bot.user.setStatus('Online');
+    bot.user.setStatus('dnd');
     bot.user.setGame('Monthly2')
 })
 //Mysql login-----------------------------------------
@@ -101,7 +101,7 @@ bot.on('message', message => {
     messagesSent : 0
   }
 userData[sender.id].messagesSent++;
-fs.writeFileSync('Monthly2-Bot/storage/userdata.json', JSON.stringify(userData), (err) => {
+fs.writeFile('Monthly2-Bot/storage/userdata.json', JSON.stringify(userData), (err) => {
   if(err) console.error(err);
 });
 })
