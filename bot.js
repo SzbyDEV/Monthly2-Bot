@@ -23,7 +23,7 @@ bot.on('message', message => {
             resetBot(message.channel);
         }
     if(message.content === ";;Szia"){
-        message.reply('Szevasz te pleb,kútya');
+        message.reply('Szevasz te pleb!');
     }
     
 });
