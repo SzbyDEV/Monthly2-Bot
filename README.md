@@ -1,2 +1,3 @@
 # Monthly2-Bot
-Monthly2-Bot 24/7
+Metin2 Server Bot
+
