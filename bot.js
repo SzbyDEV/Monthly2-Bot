@@ -49,8 +49,6 @@ bot.on('message', message => {
  if(args[0] === 'játékok'){
     if(args[1] === 'érme'){
         randomnumber = RandomNum(2);
-        message.reply('Ez törölve lesz: '+randomnumber);
-
         if(args[2] === 'fej' & randomnumber === 0){
           message.reply('Nyertél gratulálok!(fej)')
         }else if(args[2] === 'írás' & randomnumber === 1){
