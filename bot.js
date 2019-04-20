@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
-bot.login(process.env.BOT_TOKEN);
+const token = 'NTY4NTMwMDE5MzY2NzMxNzg4.XLjdbA.rgNK4BUytYEeXaT_JBTTVeNY-hc';
+bot.login(token);
 var mysql = require('mysql');
 const PREFIX = ';;';
 const request = require("request");
@@ -10,7 +11,8 @@ var userData = JSON.parse(fs.readFileSync('storage/userdata.json','utf8'));
 //Bot Start-------------------------------------------
 bot.on('ready', () => {
     bot.user.setStatus('dnd');
-    bot.user.setGame('Monthly2')
+    bot.user.setGame('Monthly2');
+	console.log('Sikeres indítás');
 })
 //Mysql login-----------------------------------------
 var db = {
@@ -63,6 +65,19 @@ bot.on('message', message => {
             message.reply('Tessék itt az avatárod linkje: ' + message.author.avatarURL);
     }else if (args[1] === 'üzenetek'){
     message.reply('Elküldtél eddig '+userData[sender.id].messagesSent+' db üzenetet!')
+    if (userData[sender.id].messagesSent <= 20){
+      message.reply('A jelenlegi szinted : 1')
+    }else if (userData[sender.id].messagesSent >= 21 & userData[sender.id].messagesSent <= 40){
+      message.reply('A jelenlegi szinted : 2')
+    }else if (userData[sender.id].messagesSent >= 41 & userData[sender.id].messagesSent <= 60){
+      message.reply('A jelenlegi szinted : 3')
+    }else if (userData[sender.id].messagesSent >= 61 & userData[sender.id].messagesSent <= 80){
+      message.reply('A jelenlegi szinted : 4')
+    }else if (userData[sender.id].messagesSent >= 81 & userData[sender.id].messagesSent <= 100){
+      message.reply('A jelenlegi szinted : 5')
+    }else if (userData[sender.id].messagesSent >= 101){
+      message.reply('A jelenlegi szinted : 6')
+    }
     }
     else if(args[1] === 'help'){
         message.reply('Jelenlegi prefixumok : érme,avatar,üzenetek')
@@ -98,7 +113,7 @@ bot.on('message', message => {
   }
  }
  if (args[0] === 'help'){
-     message.reply('Jelenlegi prefixumok a ;;info és a ;;játékok illetve a ;;pong')
+     message.reply('Jelenlegi prefixumok a ;;info és a ;;játékok illetve a ;;ping')
  }
  if(!userData[sender.id]) userData[sender.id] ={
     messagesSent : 0
