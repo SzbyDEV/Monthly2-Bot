@@ -16,9 +16,9 @@ bot.on('ready', () => {
 })
 //Mysql login-----------------------------------------
 var db = {
- host: "45.67.156.82",
- user: "root",
- password: "zaitsev"
+ host: " ",
+ user: " ",
+ password: " "
 };
 var connection;
 //Functions----------------------------------
